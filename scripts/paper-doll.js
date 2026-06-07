@@ -1,4 +1,8 @@
-const MODULE_ID = 'paper-doll';
+const MODULE_ID = 'simpleEquip';
+
+function modulePath() {
+  return game.modules.get(MODULE_ID)?.path ?? `modules/${MODULE_ID}`;
+}
 
 const DEFAULT_SLOTS = [
   { id: 'weapon', label: 'Weapon',    x: 72, y: 48, width: 56, height: 56, types: '' },
@@ -64,7 +68,7 @@ class PaperDollApp extends Application {
   }
 
   get template() {
-    return `modules/${MODULE_ID}/templates/paper-doll.hbs`;
+    return `${modulePath()}/templates/paper-doll.hbs`;
   }
 
   async getData() {
@@ -201,7 +205,7 @@ class PaperDollConfig extends FormApplication {
   }
 
   get template() {
-    return `modules/${MODULE_ID}/templates/paper-doll-config.hbs`;
+    return `${modulePath()}/templates/paper-doll-config.hbs`;
   }
 
   getData() {
