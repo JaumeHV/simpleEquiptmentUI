@@ -29,6 +29,6 @@
     "systems": []
   },
   "url": "https://github.com/JaumeHV/simpleEquiptmentUI",
-  "manifest": "https://github.com/JaumeHV/simpleEquiptmentUI/releases/download/v0.1/module.json",
+  "manifest": "https://github.com/JaumeHV/simpleEquiptmentUI/raw/refs/tags/v0.1/module.json",
   "download": "https://github.com/JaumeHV/simpleEquiptmentUI/releases/download/v0.1/module.zip"
 }
