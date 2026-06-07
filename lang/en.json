@@ -1,0 +1,23 @@
+{
+  "PAPERDOLL.Title": "Paper Doll",
+  "PAPERDOLL.Open": "Paper Doll",
+  "PAPERDOLL.ConfigTitle": "Paper Doll Settings",
+  "PAPERDOLL.CharacterImage": "Character Image",
+  "PAPERDOLL.CharacterImageHint": "Background image for the paper doll (upload or enter path).",
+  "PAPERDOLL.ImageWidth": "Canvas Width (px)",
+  "PAPERDOLL.ImageHeight": "Canvas Height (px)",
+  "PAPERDOLL.Slots": "Equipment Slots",
+  "PAPERDOLL.SlotId": "ID",
+  "PAPERDOLL.SlotLabel": "Label",
+  "PAPERDOLL.SlotX": "X%",
+  "PAPERDOLL.SlotY": "Y%",
+  "PAPERDOLL.SlotWidth": "Width (px)",
+  "PAPERDOLL.SlotHeight": "Height (px)",
+  "PAPERDOLL.SlotTypes": "Item Types",
+  "PAPERDOLL.AddSlot": "Add Slot",
+  "PAPERDOLL.RemoveSlot": "Remove Slot",
+  "PAPERDOLL.Unequip": "Unequip",
+  "PAPERDOLL.EmptySlot": "Empty",
+  "PAPERDOLL.Save": "Save",
+  "PAPERDOLL.Reset": "Reset Defaults"
+}

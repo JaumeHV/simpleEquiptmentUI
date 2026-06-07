@@ -1,0 +1,16 @@
+<div class="paper-doll-container" style="width: {{imgWidth}}px; height: {{imgHeight}}px;">
+  <img src="{{imagePath}}" class="paper-doll-image" alt="Character">
+  {{#each slots}}
+  <div class="paper-doll-slot {{#if equipped}}slot-equipped{{else}}slot-empty{{/if}}"
+       data-slot-id="{{id}}"
+       data-item-id="{{#if item}}{{item.id}}{{/if}}"
+       style="left: {{x}}%; top: {{y}}%; width: {{width}}px; height: {{height}}px;"
+       title="{{label}}{{#if item}}: {{item.name}}{{/if}}">
+    {{#if item}}
+    <img src="{{item.img}}" class="slot-item-img" alt="{{item.name}}">
+    {{else}}
+    <span class="slot-placeholder">{{label}}</span>
+    {{/if}}
+  </div>
+  {{/each}}
+</div>

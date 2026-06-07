@@ -1,0 +1,82 @@
+<form class="paper-doll-config-form" autocomplete="off">
+  <h2>{{localize "PAPERDOLL.CharacterImage"}}</h2>
+  <div class="form-group">
+    <label>{{localize "PAPERDOLL.CharacterImage"}}</label>
+    <div class="form-fields">
+      <input type="text" name="imagePath" value="{{imagePath}}" placeholder="path/to/image.png">
+      <button type="button" class="file-picker" data-type="image"><i class="fas fa-file-import"></i></button>
+    </div>
+    <p class="notes">{{localize "PAPERDOLL.CharacterImageHint"}}</p>
+  </div>
+  <div class="form-group">
+    <label>{{localize "PAPERDOLL.ImageWidth"}}</label>
+    <div class="form-fields">
+      <input type="number" name="imgWidth" value="{{imgWidth}}" min="100" max="2000" step="10">
+    </div>
+  </div>
+  <div class="form-group">
+    <label>{{localize "PAPERDOLL.ImageHeight"}}</label>
+    <div class="form-fields">
+      <input type="number" name="imgHeight" value="{{imgHeight}}" min="200" max="3000" step="10">
+    </div>
+  </div>
+
+  <h2>{{localize "PAPERDOLL.Slots"}}</h2>
+  <div class="slots-list">
+    {{#each slots}}
+    <div class="slot-entry" data-index="{{@index}}">
+      <div class="form-group">
+        <label>{{localize "PAPERDOLL.SlotId"}}</label>
+        <div class="form-fields">
+          <input type="text" name="slots.{{@index}}.id" value="{{id}}" placeholder="weapon">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "PAPERDOLL.SlotLabel"}}</label>
+        <div class="form-fields">
+          <input type="text" name="slots.{{@index}}.label" value="{{label}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "PAPERDOLL.SlotX"}}</label>
+        <div class="form-fields">
+          <input type="number" name="slots.{{@index}}.x" value="{{x}}" min="0" max="100" step="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "PAPERDOLL.SlotY"}}</label>
+        <div class="form-fields">
+          <input type="number" name="slots.{{@index}}.y" value="{{y}}" min="0" max="100" step="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "PAPERDOLL.SlotWidth"}}</label>
+        <div class="form-fields">
+          <input type="number" name="slots.{{@index}}.width" value="{{width}}" min="16" max="200" step="2">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "PAPERDOLL.SlotHeight"}}</label>
+        <div class="form-fields">
+          <input type="number" name="slots.{{@index}}.height" value="{{height}}" min="16" max="200" step="2">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "PAPERDOLL.SlotTypes"}}</label>
+        <div class="form-fields">
+          <input type="text" name="slots.{{@index}}.types" value="{{types}}" placeholder="weapon,armour,equipment">
+        </div>
+      </div>
+      <button type="button" class="remove-slot" title="{{localize 'PAPERDOLL.RemoveSlot'}}">
+        <i class="fas fa-trash"></i>
+      </button>
+    </div>
+    {{/each}}
+  </div>
+  <button type="button" class="add-slot"><i class="fas fa-plus"></i> {{localize "PAPERDOLL.AddSlot"}}</button>
+
+  <div class="form-footer">
+    <button type="submit"><i class="fas fa-save"></i> {{localize "PAPERDOLL.Save"}}</button>
+    <button type="button" class="reset-defaults"><i class="fas fa-undo"></i> {{localize "PAPERDOLL.Reset"}}</button>
+  </div>
+</form>
