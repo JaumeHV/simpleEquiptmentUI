@@ -360,13 +360,11 @@ Hooks.on('init', () => {
 });
 
 Hooks.on('renderActorSheet', (app, html) => {
-  if (html[0].querySelector('.paper-doll-button')) return;
+  const appEl = app.element ?? $(app);
+  if (appEl.find('.paper-doll-button').length) return;
 
-  const btn = document.createElement('a');
-  btn.className = 'paper-doll-button';
-  btn.title = game.i18n.localize('PAPERDOLL.Open');
-  btn.innerHTML = '<i class="fas fa-fw fa-child"></i>';
-  btn.addEventListener('click', ev => {
+  const btn = $(`<a class="paper-doll-button" title="${game.i18n.localize('PAPERDOLL.Open')}"><i class="fas fa-fw fa-child"></i></a>`);
+  btn.on('click', ev => {
     ev.preventDefault();
     const existing = Object.values(ui.windows).find(
       w => w instanceof PaperDollApp && w.actor.id === app.actor.id
@@ -379,13 +377,13 @@ Hooks.on('renderActorSheet', (app, html) => {
     }
   });
 
-  const header = html.closest('.app').find('.window-header, .window-titlebar')[0];
-  if (!header) return;
+  const header = appEl.find('.window-header, .window-titlebar');
+  if (!header.length) return;
 
-  const buttons = header.querySelector('.header-buttons');
-  if (buttons) {
-    buttons.insertBefore(btn, buttons.firstChild);
+  const buttons = header.find('.header-buttons');
+  if (buttons.length) {
+    buttons.prepend(btn);
   } else {
-    header.appendChild(btn);
+    header.append(btn);
   }
 });
